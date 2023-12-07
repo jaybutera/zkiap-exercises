@@ -52,7 +52,7 @@ def colorproof(g):
         # Hash the graph and mod number of nodes to choose a node
         challenge = hashlib.sha256(json.dumps(g2json(g)).encode('utf-8'))
         c_i = int.from_bytes(challenge.digest()) % len(g)
-        # Choose neighbor of that node with same process padded 0 until different
+        # Choose neighbor of that node with same process padded 0
         neighbor = hashlib.sha256((json.dumps(g2json(g)) + '0').encode('utf-8'))
         c_j = int.from_bytes(neighbor.digest()) % len(g[c_i][2])
 
