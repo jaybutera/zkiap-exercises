@@ -1,7 +1,6 @@
 import hashlib
 import random
 import json
-from typing import TypeAlias
 
 def dlogproof(x: int, g: int, p: int) -> (int, int, int):
     y = (g**x) % p
